@@ -122,3 +122,6 @@ endif
 " Color scheme ---------------------------------------
 syntax on
 colorscheme jellybeans
+
+" Tabs, Indent
+set expandtab
