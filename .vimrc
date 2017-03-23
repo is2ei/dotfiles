@@ -72,50 +72,37 @@ augroup END
 
 " Backups -----------------------------------------------------------------------------------------------------
 set undofile
-set undodir=~/.vim/tmp/undo//
+set undodir=~/.vim/tmp/undo/
 set backup
-set backupdir=~/.vim/tmp/backup//
-set directory=~/.vim/tmp/swap//
+set backupdir=~/.vim/tmp/backup/
+set directory=~/.vim/tmp/swap/
 
 " Search ------------------------------------------
 set incsearch
 set hlsearch
 
 " dein Scripts --------------------------------------------------------------------------------------------
-" Required:
-set runtimepath+=/home/ihorie/.vim/bundles//repos/github.com/Shougo/dein.vim
+if &compatible
+   set nocompatible
+endif
+set runtimepath+=~/.cache/dein/repos/github.com/Shougo/dein.vim
 
-" Required:
-if dein#load_state('/home/ihorie/.vim/bundles/')
-  call dein#begin('/home/ihorie/.vim/bundles/')
+if dein#load_state('~/.vim/bundle/')
+  call dein#begin('~/.vim/bundle/')
 
-  " Let dein manage dein
-  " Required:
-  call dein#add('/home/ihorie/.vim/bundles//repos/github.com/Shougo/dein.vim')
+  call dein#add('~/.cache/dein/repos/github.com/Shougo/dein.vim')
+  call dein#add('Shougo/neocomplete.vim')
 
   " Add or remove your plugins here:
-  call dein#add('Shougo/neosnippet.vim')
-  call dein#add('Shougo/neosnippet-snippets')
   call dein#add('rust-lang/rust.vim')
   call dein#add('nanotech/jellybeans.vim')
-  call dein#add('yosssi/vim-ace')
 
-  " You can specify revision/branch/tag.
-  call dein#add('Shougo/vimshell', { 'rev': '3787e5' })
-
-  " Required:
   call dein#end()
   call dein#save_state()
 endif
 
-" Required:
 filetype plugin indent on
 syntax enable
-
-" If you want to install not installed plugins on startup.
-if dein#check_install()
-  call dein#install()
-endif
 
 "End dein Scripts-------------------------
 
