@@ -54,7 +54,6 @@ set showmatch
 set showbreak=↪
 set splitbelow
 set splitright
-set title
 set ttyfast
 set undoreload=10000
 set visualbell t_vb=
