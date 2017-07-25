@@ -1,1 +1,28 @@
+# Compiled source
+#####################
+*.class
+*.o
+
+# Temporary files
+########################
+*.swp
+*~
+
+# Packages
+#####################
+*.iso
+*.zip
+
+# Logs and databases
+#########################
+*.sql
+*.sqlite
+
+# IDE
+###############
 .idea
+
+# OS generated files
+#######################
+.DS_Store
+Thumbs.db
