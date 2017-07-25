@@ -1,10 +1,11 @@
 [user]
-        email = horie7188@gmail.com
         name  = Issei Horie
+        email = horie7188@gmail.com
 
 [core]
         editor = vim
-
+        excludesfile = ~/.gitignore
 [alias]
         a  = add --all
+        c  = commit
         ss = status
