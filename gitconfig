@@ -5,7 +5,9 @@
 [core]
         editor = vim
         excludesfile = ~/.gitignore
+
 [alias]
         a  = add --all
         c  = commit
+        ca = commit -a
         ss = status
