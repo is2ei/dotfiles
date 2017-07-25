@@ -1,3 +1,10 @@
 [user]
-	email = horie7188@gmail.com
-	name = Issei Horie
+        email = horie7188@gmail.com
+        name  = Issei Horie
+
+[core]
+        editor = vim
+
+[alias]
+        a  = add --all
+        ss = status
