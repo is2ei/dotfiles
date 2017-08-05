@@ -11,3 +11,4 @@
         c  = commit
         ca = commit -a
         ss = status
+        ps = push
