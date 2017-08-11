@@ -38,3 +38,4 @@ zstyle ':completion:*:kill:*' command 'ps -u $USER -o pid,%cpu,tty,cputime,cmd'
 
 # Alias
 alias emacs="emacs -nw"
+alias ocb="ocamlbuild"
