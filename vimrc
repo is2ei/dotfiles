@@ -58,7 +58,7 @@ set ttyfast
 set undoreload=10000
 set visualbell t_vb=
 
-" Line Return ----------------------------------------------------------------------------------------
+" Line Return ----------------------------------------------------------------------------
 " Make sure Vim returns to the same line when you reopen a file.
 " Thanks to Steve Losh http://bitbucket.org/sjl/dotfiles/src/tip/vim/
 augroup line_return
@@ -69,7 +69,7 @@ augroup line_return
         \ endif
 augroup END
 
-" Backups -----------------------------------------------------------------------------------------------------
+" Backups ------------------------------------------------------------------------
 set undofile
 set undodir=~/.vim/tmp/undo/
 set backup
@@ -80,7 +80,7 @@ set directory=~/.vim/tmp/swap/
 set incsearch
 set hlsearch
 
-" dein Scripts --------------------------------------------------------------------------------------------
+" dein Scripts --------------------------------------------------------------------------
 if &compatible
    set nocompatible
 endif
