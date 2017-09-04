@@ -12,3 +12,5 @@
         ca = commit -a
         ss = status
         ps = push
+        lg = log
+        co = checkout
