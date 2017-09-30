@@ -1,2 +1,2 @@
-install: emacs.el
-	cp emacs.el ~/.emacs.el
+install: emacs.el gitconfig
+	cp emacs.el ~/.emacs.el && cp gitconfig ~/.gitconfig
