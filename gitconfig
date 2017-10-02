@@ -1,9 +1,9 @@
 [user]
         name  = Issei Horie
         email = horie7188@gmail.com
-
+n
 [core]
-        editor = emacs
+        editor = vi
         excludesfile = ~/.gitignore
 
 [alias]
