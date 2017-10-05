@@ -16,3 +16,6 @@ n
         co = checkout
         pl = pull
         df = diff
+        co = checkout
+	br = branch
+	create-backlog-issue-branch = "!git checkout -b `pbpaste | sed -E 's/([a-zA-Z]+-[0-9]+) (.*)/\\1\\/\\2/g' | sed -e 's/ /-/g' | sed -e 's/\\\"//g'`"
