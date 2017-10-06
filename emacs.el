@@ -1,4 +1,4 @@
-;; (load-theme 'wombat t)
+(load-theme 'wombat t)
 
 (setq backup-directory-alist `(("." . "~/.emacs.d/backup")))
 
@@ -10,3 +10,8 @@
 ;(add-to-list 'load-path "~/.emacs.d/plugin/neotree")
 ;(require 'neotree)
 ;(global-set-key [f8] 'neotree-toggle)
+
+;rust-mode
+(add-to-list 'load-path "~/.emacs.d/plugin/rust-mode")
+(autoload 'rust-mode "rust-mode" nil t)
+(add-to-list 'auto-mode-alist '("\\.rs\\'" . rust-mode))
