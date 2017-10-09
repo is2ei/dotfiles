@@ -7,9 +7,10 @@
 (prefer-coding-system 'utf-8)
 
 ; neotree
-;(add-to-list 'load-path "~/.emacs.d/plugin/neotree")
-;(require 'neotree)
-;(global-set-key [f8] 'neotree-toggle)
+; https://github.com/jaypei/emacs-neotree
+(add-to-list 'load-path "~/.emacs.d/plugin/neotree")
+(require 'neotree)
+(global-set-key [f8] 'neotree-toggle)
 
 ;rust-mode
 (add-to-list 'load-path "~/.emacs.d/plugin/rust-mode")
