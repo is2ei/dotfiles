@@ -26,6 +26,8 @@ alias emacs="emacs -nw"
 # shopt
 shopt -s autocd
 
-# ls settings
+# ls aliases
 alias ll='ls -alh'
 alias la='ls -A'
+alias l='ls -CFlh'
+alias lsd="ls -alF | grep /$"
