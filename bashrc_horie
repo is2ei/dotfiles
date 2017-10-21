@@ -18,6 +18,7 @@ umask 022
 export LESS='-X -i -P ?f%f:(stdin).  ?lb%lb?L/%L..  [?eEOF:?pb%pb\%..]'
 unset LANG
 
+
 alias vimrc="vim ~/.vimrc"
 alias bashrc="vim ~/.bashrc && source ~/.bashrc"
 
@@ -29,6 +30,7 @@ alias emacs="emacs -nw"
 
 # shopt
 shopt -s autocd
+shopt -s no_empty_cmd_completion
 
 # ls aliases
 alias ll='ls -alh'
@@ -72,4 +74,4 @@ FROWNY="${RED}:(${NORMAL}"
 SELECT="if [ \$? = 0 ]; then echo \"${SMILEY}\"; else echo \"${FROWNY}\"; fi"
 
 # Throw it all together 
-PS1="${RESET}${GREEN}\h${NORMAL} \`${SELECT}\` ${YELLOW}>${NORMAL} "
+PS1="${RESET}${GREEN}\u@\h:\w${NORMAL} \`${SELECT}\` ${YELLOW}\n>${NORMAL} "
