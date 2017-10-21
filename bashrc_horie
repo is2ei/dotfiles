@@ -16,9 +16,13 @@
 # Basic settings ---------------------------------------------------
 alias vimrc="vim ~/.vimrc"
 alias bashrc="vim ~/.bashrc && source ~/.bashrc"
+alias ll='ls -alh'
 
 # Vim settings
 alias vi="vim"
 
 # Emacs settings
 alias emacs="emacs -nw"
+
+# shopt
+shopt -s autocd
