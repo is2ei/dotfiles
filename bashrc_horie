@@ -20,3 +20,5 @@ alias bashrc="vim ~/.bashrc && source ~/.bashrc"
 # Vim settings
 alias vi="vim"
 
+# Emacs settings
+alias emacs="emacs -nw"
