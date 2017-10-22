@@ -30,6 +30,8 @@ alias emacs="emacs -nw"
 # shopt
 shopt -s autocd
 shopt -s no_empty_cmd_completion
+shopt -s histappend
+shopt -s checkwinsize
 
 # ls aliases
 alias ll='ls -alh'
@@ -60,6 +62,15 @@ extract () {
     fi
 }
 
+# colored ls
+if [ -x /usr/bin/dircolors ]; then
+    test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
+    alias ls='ls --color=auto'
+    alias grep='grep --color=auto'
+    alias fgrep='fgrep --color=auto'
+    alias egrep='egrep --color=auto'
+fi
+
 # prompt settings
 RESET="\[\017\]"
 NORMAL="\[\033[0m\]"
@@ -71,6 +82,5 @@ BLUE="\[\033[0;34m\]"
 SMILEY="${WHITE}:)${NORMAL}"
 FROWNY="${RED}:(${NORMAL}"
 SELECT="if [ \$? = 0 ]; then echo \"${SMILEY}\"; else echo \"${FROWNY}\"; fi"
-
 # Throw it all together 
 PS1="${RESET}${GREEN}\u@\h:\w${NORMAL} \`${SELECT}\` ${YELLOW}\n>${NORMAL} "
