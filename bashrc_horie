@@ -15,7 +15,6 @@
 
 # Basic settings ---------------------------------------------------
 umask 022
-export LESS='-X -i -P ?f%f:(stdin).  ?lb%lb?L/%L..  [?eEOF:?pb%pb\%..]'
 unset LANG
 unset LANGUAGE
 

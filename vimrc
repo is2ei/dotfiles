@@ -84,12 +84,12 @@ set hlsearch
 if &compatible
    set nocompatible
 endif
-set runtimepath+=~/.cache/dein/repos/github.com/Shougo/dein.vim
+set runtimepath+=~/.vim/bundles/repos/github.com/Shougo/dein.vim
 
-if dein#load_state('~/.vim/bundle/')
-  call dein#begin('~/.vim/bundle/')
+if dein#load_state('~/.vim/bundles/')
+  call dein#begin('~/.vim/bundles/')
 
-  call dein#add('~/.cache/dein/repos/github.com/Shougo/dein.vim')
+  call dein#add('~/.vim/bundles/repos/github.com/Shougo/dein.vim')
   call dein#add('Shougo/neocomplete.vim')
 
   " Add or remove your plugins here:
