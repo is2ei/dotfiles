@@ -63,6 +63,14 @@ extract () {
     fi
 }
 
+# show PATH
+path () {
+    IFS=':' read -ra PATHES  <<< $PATH
+    for i in "${PATHES[@]}"; do
+        echo $i
+    done
+}
+
 # colored ls
 if [ -x /usr/bin/dircolors ]; then
     test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
