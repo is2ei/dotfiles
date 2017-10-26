@@ -1,5 +1,3 @@
-(load-theme 'wombat t)
-
 (setq backup-directory-alist `(("." . "~/.emacs.d/backup")))
 
 ;; Japanese settings
@@ -16,3 +14,8 @@
 (add-to-list 'load-path "~/.emacs.d/plugin/rust-mode")
 (autoload 'rust-mode "rust-mode" nil t)
 (add-to-list 'auto-mode-alist '("\\.rs\\'" . rust-mode))
+
+;; set transparency
+(set-background-color "ARGBBB000000")
+
+;(load-theme 'wombat t)
