@@ -2,8 +2,6 @@
 
 (add-to-list 'custom-theme-load-path "~/.emacs.d/themes/")
 (load-theme 'kiriko t)
-;;(load-theme 'wombat t)
-;;(load-theme 'zenburn t)
 
 ;; Japanese settings
 (set-language-environment 'Japanese)
@@ -19,8 +17,4 @@
 (add-to-list 'load-path "~/.emacs.d/plugin/rust-mode")
 (autoload 'rust-mode "rust-mode" nil t)
 (add-to-list 'auto-mode-alist '("\\.rs\\'" . rust-mode))
-
-;; set transparency
-;(set-background-color "ARGBBB000000")
-
 
