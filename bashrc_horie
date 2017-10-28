@@ -19,7 +19,6 @@ unset LANG
 unset LANGUAGE
 
 alias vimrc="vim ~/.vimrc"
-alias bashrc="vim ~/.bashrc && source ~/.bashrc"
 
 # Vim settings
 alias vi="vim"
@@ -84,7 +83,7 @@ fi
 RESET="\[\017\]"
 NORMAL="\[\033[0m\]"
 RED="\[\033[31;1m\]"
-GREEN="\[\033[0;32m\]"
+GREEN="\[\033[38;2;200;240;200m\]"
 YELLOW="\[\033[33;1m\]"
 WHITE="\[\033[37;1m\]"
 BLUE="\[\033[0;34m\]"
@@ -93,3 +92,6 @@ FROWNY="${RED}:(${NORMAL}"
 SELECT="if [ \$? = 0 ]; then echo \"${SMILEY}\"; else echo \"${FROWNY}\"; fi"
 # Throw it all together 
 PS1="${RESET}${GREEN}\u@\h:\w${NORMAL} \`${SELECT}\` ${YELLOW}\n>${NORMAL} "
+
+# load bashrc
+alias bashrc="source ~/.bashrc"
