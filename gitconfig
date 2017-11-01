@@ -1,12 +1,14 @@
 [user]
         name  = Issei Horie
         email = horie7188@gmail.com
-n
+
 [core]
         editor = vi
         excludesfile = ~/.gitignore
+	paget = less
 
 [alias]
+        cl = clone
         aa = add --all
         c  = commit
         ca = commit -a

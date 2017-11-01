@@ -1,9 +1,10 @@
-(load-theme 'wombat t)
-
 (setq backup-directory-alist `(("." . "~/.emacs.d/backup")))
 
+(add-to-list 'custom-theme-load-path "~/.emacs.d/themes/")
+(load-theme 'kiriko t)
+
 ;; Japanese settings
-;;(set-language-environment 'Japanese)
+(set-language-environment 'Japanese)
 (prefer-coding-system 'utf-8)
 
 ; neotree
@@ -17,7 +18,12 @@
 (autoload 'rust-mode "rust-mode" nil t)
 (add-to-list 'auto-mode-alist '("\\.rs\\'" . rust-mode))
 
+<<<<<<< HEAD
 ; typemacs
 (add-to-list 'load-path "~/.emacs.d/plugin/typemacs")
 (require 'typemacs)
 (global-set-key [f9] 'typemacs-start)
+=======
+; mouse support
+(xterm-mouse-mode t)
+>>>>>>> 7ff36eb363715e1abaa94896f3f441d8dab1e4c6

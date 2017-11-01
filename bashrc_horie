@@ -15,12 +15,10 @@
 
 # Basic settings ---------------------------------------------------
 umask 022
-export LESS='-X -i -P ?f%f:(stdin).  ?lb%lb?L/%L..  [?eEOF:?pb%pb\%..]'
 unset LANG
-
+unset LANGUAGE
 
 alias vimrc="vim ~/.vimrc"
-alias bashrc="vim ~/.bashrc && source ~/.bashrc"
 
 # Vim settings
 alias vi="vim"
@@ -31,6 +29,8 @@ alias emacs="emacs -nw"
 # shopt
 shopt -s autocd
 shopt -s no_empty_cmd_completion
+shopt -s histappend
+shopt -s checkwinsize
 
 # ls aliases
 alias ll='ls -alh'
@@ -43,17 +43,18 @@ alias lt='ls -altr'
 extract () {
     if [ -f $1 ] ; then
         case $1 in
-	    *.tar.bz2)    tar xvjf $1    ;;
-	    *.tar.gz)     tar xvzf $1    ;;
-	    *.bz2)        bunzip2 $1     ;;
-	    *.rar)        unrar x $1     ;;
-	    *.gz)         gunzip $1      ;;
-	    *.tar)        tar xvf $1     ;;
-	    *.tbz2)       tar xvjf $1    ;;
-	    *.tgz)        tar xvzf $1    ;;
-	    *.zip)        unzip $1       ;;
-	    *.Z)          uncompress $1  ;;
-	    *.7z)         7z x $1        ;;
+	    *.tar.bz2)    tar xvjf $1           ;;
+	    *.tar.gz)     tar xvzf $1           ;;
+	    *.bz2)        bunzip2 $1            ;;
+	    *.rar)        unrar x $1            ;;
+	    *.gz)         gunzip $1             ;;
+	    *.tar)        tar xvf $1            ;;
+	    *.tbz2)       tar xvjf $1           ;;
+	    *.tgz)        tar xvzf $1           ;;
+	    *.xz)         xz -dv $1 | tar xfv - ;;
+	    *.zip)        unzip $1              ;;
+	    *.Z)          uncompress $1         ;;
+	    *.7z)         7z x $1               ;;
 	    *)            echo "don't know how to extract '$1'..." ;;
 	esac
     else
@@ -61,17 +62,42 @@ extract () {
     fi
 }
 
-# prompt settings
-RESET="\[\017\]"
-NORMAL="\[\033[0m\]"
-RED="\[\033[31;1m\]"
-GREEN="\[\033[0;32m\]"
-YELLOW="\[\033[33;1m\]"
-WHITE="\[\033[37;1m\]"
-BLUE="\[\033[0;34m\]"
-SMILEY="${WHITE}:)${NORMAL}"
-FROWNY="${RED}:(${NORMAL}"
-SELECT="if [ \$? = 0 ]; then echo \"${SMILEY}\"; else echo \"${FROWNY}\"; fi"
+# show PATH
+path () {
+    IFS=':' read -ra PATHES  <<< $PATH
+    for i in "${PATHES[@]}"; do
+        echo $i
+    done
+}
 
-# Throw it all together 
-PS1="${RESET}${GREEN}\u@\h:\w${NORMAL} \`${SELECT}\` ${YELLOW}\n>${NORMAL} "
+# colored ls
+if [ -x /usr/bin/dircolors ]; then
+    test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
+    alias ls='ls --color=auto'
+    alias grep='grep --color=auto'
+    alias fgrep='fgrep --color=auto'
+    alias egrep='egrep --color=auto'
+fi
+
+unameOut=`uname`
+
+# prompt settings
+if [ "$unameOut" == "Darwin" ]; then
+    RESET="\[\017\]"
+    PS1="${RESET}\u@\h:\w\n> "
+else    
+    RESET="\[\017\]"
+    NORMAL="\[\033[0m\]"
+    RED="\[\033[38;2;255;160;160m\]"
+    GREEN="\[\033[38;2;165;230;170m\]"
+    YELLOW="\[\033[38;2;255;255;150m\]"
+    WHITE="\[\033[37;1m\]"
+    SMILEY="${WHITE}:)${NORMAL}"
+    FROWNY="${RED}:(${NORMAL}"
+    SELECT="if [ \$? = 0 ]; then echo \"${SMILEY}\"; else echo \"${FROWNY}\"; fi"
+    # Throw it all together 
+   PS1="${RESET}${GREEN}\u@\h:\w${NORMAL} \`${SELECT}\` ${YELLOW}\n>${NORMAL} "
+fi
+
+# load bashrc
+alias bashrc="source ~/.bashrc"
