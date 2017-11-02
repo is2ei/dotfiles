@@ -18,5 +18,10 @@
 (autoload 'rust-mode "rust-mode" nil t)
 (add-to-list 'auto-mode-alist '("\\.rs\\'" . rust-mode))
 
+; typemacs
+(add-to-list 'load-path "~/.emacs.d/plugin/typemacs")
+(require 'typemacs)
+(global-set-key [f9] 'typemacs-start)
+
 ; mouse support
 (xterm-mouse-mode t)
