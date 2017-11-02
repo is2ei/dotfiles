@@ -16,7 +16,6 @@
 
 # Logs and databases
 #########################
-*.sql
 *.sqlite
 
 # IDE

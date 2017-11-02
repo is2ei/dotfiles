@@ -13,6 +13,9 @@
 #                ||     ||
 #
 
+# info
+unameOut=`uname`
+
 # Basic settings ---------------------------------------------------
 umask 022
 unset LANG
@@ -24,7 +27,12 @@ alias vimrc="vim ~/.vimrc"
 alias vi="vim"
 
 # Emacs settings
-alias emacs="emacs -nw"
+
+if [ "$unameOut" == "Darwin" ]; then
+    :   
+else
+    alias emacs="emacs -nw"
+fi
 
 # shopt
 shopt -s autocd
@@ -79,8 +87,6 @@ if [ -x /usr/bin/dircolors ]; then
     alias egrep='egrep --color=auto'
 fi
 
-unameOut=`uname`
-
 # prompt settings
 if [ "$unameOut" == "Darwin" ]; then
     RESET="\[\017\]"
@@ -101,3 +107,6 @@ fi
 
 # load bashrc
 alias bashrc="source ~/.bashrc"
+
+# memo
+alias devinfo="vi ~/.devinfo"
