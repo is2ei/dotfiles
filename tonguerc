@@ -1,1 +1,2 @@
-alias emacs = "emacs -nw"
+ps1 = " $ "
+alias(emacs, "emacs -nw")
