@@ -3,7 +3,7 @@
         email = horie7188@gmail.com
 
 [core]
-        editor = vi
+        editor = vim
         excludesfile = ~/.gitignore
 	paget = less
 

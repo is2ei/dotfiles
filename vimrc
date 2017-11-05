@@ -27,7 +27,7 @@
 "  / /| | / / /  / / / / __ \/ / / /  / __ \/ _ \/ _ \/ __  /  / / ___/   | | / // // /|_/ /
 " / ___ |/ / /  / /_/ / /_/ / /_/ /  / / / /  __/  __/ /_/ /  / (__  )    | |/ // // /  / /
 "/_/  |_/_/_/   \__, /\____/\__,_/  /_/ /_/\___/\___/\__,_/  /_/____/     |___/___/_/  /_/
-"/____/
+"              /_ _ /
 
 " Thanks to @b4b4r07 https://gist.github.com/b4b4r07/70c68ec76f3d6e1ada82
 
@@ -94,20 +94,20 @@ if dein#load_state('~/.vim/bundles/')
 
   " Add or remove your plugins here:
   call dein#add('rust-lang/rust.vim')
-  call dein#add('nanotech/jellybeans.vim')
 
   call dein#end()
   call dein#save_state()
 endif
 
 filetype plugin indent on
-syntax enable
 
 "End dein Scripts-------------------------
 
-" Color scheme ---------------------------------------
-syntax on
-colorscheme jellybeans
-
 " Tabs, Indent
 set expandtab
+
+" Color settings
+" /usr/share/vim/vim73/colors
+syntax on
+" github.com/nanotech/jellybeans.vim
+colorscheme jellybeans
