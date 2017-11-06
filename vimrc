@@ -110,4 +110,4 @@ set expandtab
 " /usr/share/vim/vim73/colors
 syntax on
 " github.com/nanotech/jellybeans.vim
-colorscheme jellybeans
+" colorscheme jellybeans
