@@ -117,3 +117,6 @@ alias devinfo="vi ~/.devinfo"
 
 # FOR SERVER
 # PS1="\e[48;5;88m [\u@\H:\w] \n $ "
+# alias ls='ls'
+# alias ll='ls -l'
+# alias l.='ls -d .*'
