@@ -115,7 +115,7 @@ alias bashrc="source ~/.bashrc"
 alias devinfo="vi ~/.devinfo"
 
 
-# FOR SERVER
+# FOR PRODUCTION SERVER
 # PS1="\e[48;5;88m [\u@\H:\w] \n $ "
 # alias ls='ls'
 # alias ll='ls -l'
