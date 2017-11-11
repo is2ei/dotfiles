@@ -14,7 +14,7 @@
 #
 
 # info
-unameOut=`uname`
+os=`uname`
 
 # Basic settings ---------------------------------------------------
 umask 022
@@ -85,10 +85,14 @@ if [ -x /usr/bin/dircolors ]; then
     alias grep='grep --color=auto'
     alias fgrep='fgrep --color=auto'
     alias egrep='egrep --color=auto'
+else
+    export CLICOLOR=1
+    export LSCOLORS=gxFxCxDxcxegedabagaced
 fi
 
+
 # prompt settings
-if [ "$unameOut" == "Darwin" ]; then
+if [ "$os" == "Darwin" ]; then
     RESET="\[\017\]"
     SMILEY=":)"
     FROWNY=":("
@@ -113,7 +117,6 @@ alias bashrc="source ~/.bashrc"
 
 # memo
 alias devinfo="vi ~/.devinfo"
-
 
 # FOR PRODUCTION SERVER
 # PS1="\e[48;5;88m [\u@\H:\w] \n $ "
