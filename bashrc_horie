@@ -72,44 +72,43 @@ extract () {
 
 # show PATH
 path () {
-    IFS=':' read -ra PATHES  <<< $PATH
-    for i in "${PATHES[@]}"; do
-        echo $i
-    done
+  IFS=':' read -ra PATHES  <<< $PATH
+  for i in "${PATHES[@]}"; do
+    echo $i
+  done
 }
 
 # colored ls
 if [ -x /usr/bin/dircolors ]; then
-    test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
-    alias ls='ls --color=auto'
-    alias grep='grep --color=auto'
-    alias fgrep='fgrep --color=auto'
-    alias egrep='egrep --color=auto'
+  test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
+  alias ls='ls --color=auto'
+  alias grep='grep --color=auto'
+  alias fgrep='fgrep --color=auto'
+  alias egrep='egrep --color=auto'
 else
-    export CLICOLOR=1
-    export LSCOLORS=gxFxCxDxcxegedabagaced
+  export CLICOLOR=1
+  export LSCOLORS=gxFxCxDxcxegedabagaced
 fi
-
 
 # prompt settings
 if [ "$os" == "Darwin" ]; then
-    RESET="\[\017\]"
-    SMILEY=":)"
-    FROWNY=":("
-    SELECT="if [ \$? = 0 ]; then echo \"${SMILEY}\"; else echo \"${FROWNY}\"; fi"
-    PS1="${RESET}\u@\h:\w \`${SELECT}\` \n> "
+  RESET="\[\017\]"
+  SMILEY=":)"
+  FROWNY=":("
+  SELECT="if [ \$? = 0 ]; then echo \"${SMILEY}\"; else echo \"${FROWNY}\"; fi"
+  PS1="${RESET}\u@\h:\w \`${SELECT}\` \n> "
 else    
-    RESET="\[\017\]"
-    NORMAL="\[\033[0m\]"
-    RED="\[\033[38;2;255;160;160m\]"
-    GREEN="\[\033[38;2;165;230;170m\]"
-    YELLOW="\[\033[38;2;255;255;150m\]"
-    WHITE="\[\033[37;1m\]"
-    SMILEY="${WHITE}:)${NORMAL}"
-    FROWNY="${RED}:(${NORMAL}"
-    SELECT="if [ \$? = 0 ]; then echo \"${SMILEY}\"; else echo \"${FROWNY}\"; fi"
-    # Throw it all together 
-    PS1="${RESET}${GREEN}\u@\h:\w${NORMAL} \`${SELECT}\` ${YELLOW}\n>${NORMAL} "
+  RESET="\[\017\]"
+  NORMAL="\[\033[0m\]"
+  RED="\[\033[38;2;255;160;160m\]"
+  GREEN="\[\033[38;2;165;230;170m\]"
+  YELLOW="\[\033[38;2;255;255;150m\]"
+  WHITE="\[\033[37;1m\]"
+  SMILEY="${WHITE}:)${NORMAL}"
+  FROWNY="${RED}:(${NORMAL}"
+  SELECT="if [ \$? = 0 ]; then echo \"${SMILEY}\"; else echo \"${FROWNY}\"; fi"
+  # Throw it all together 
+  PS1="${RESET}${GREEN}\u@\h:\w${NORMAL} \`${SELECT}\` ${YELLOW}\n>${NORMAL} "
 fi
 
 # load bashrc
