@@ -10,7 +10,7 @@ bash: bashrc_horie
 	cp bashrc_horie ~/.bashrc_horie
 
 zsh: zshrc_horie
-	cp zshrc_horie ~/.zhrc_horie
+	cp zshrc_horie ~/.zshrc_horie
 
 tongue: tonguerc
 	cp tonguerc ~/.tonguerc
