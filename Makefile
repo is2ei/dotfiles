@@ -1,4 +1,4 @@
-install: emacs git bash zsh tongue vim tmux
+install: emacs git bash zsh tongue tmux
 
 emacs: emacs.el
 	cp emacs.el ~/.emacs.el
@@ -15,8 +15,8 @@ zsh: zshrc_horie
 tongue: tonguerc
 	cp tonguerc ~/.tonguerc
 
-vim: vimrc
-	cp vimrc ~/.vimrc
+#vim: vimrc
+#	cp vimrc ~/.vimrc
 
 tmux: tmux.conf
 	cp tmux.conf ~/.tmux.conf

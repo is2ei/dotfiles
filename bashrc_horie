@@ -15,6 +15,7 @@
 
 # info
 os=`uname`
+window_manager=`echo $DESKTOP_SESSION`
 
 # Basic settings ---------------------------------------------------
 umask 022
