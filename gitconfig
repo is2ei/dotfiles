@@ -5,19 +5,20 @@
 [core]
         editor = vim
         excludesfile = ~/.gitignore
-	paget = less
+        paget = less
 
 [alias]
-        cl = clone
-        aa = add --all
-        c  = commit
-        ca = commit -a
-        ss = status
-        ps = push
-        lg = log
-        co = checkout
-        pl = pull
-        df = diff
-        co = checkout
-	br = branch
-	create-backlog-issue-branch = "!git checkout -b `pbpaste | sed -E 's/([a-zA-Z]+-[0-9]+) (.*)/\\1\\/\\2/g' | sed -e 's/ /-/g' | sed -e 's/\\\"//g'`"
+        cl  = clone
+        aa  = add --all
+        c   = commit
+        ca  = commit -a
+        ss  = status
+        ps  = push
+        lg  = log
+        lgo = log --oneline
+        co  = checkout
+        pl  = pull
+        df  = diff
+        co  = checkout
+        br  = branch
+        create-backlog-issue-branch = "!git checkout -b `pbpaste | sed -E 's/([a-zA-Z]+-[0-9]+) (.*)/\\1\\/\\2/g' | sed -e 's/ /-/g' | sed -e 's/\\\"//g'`"
