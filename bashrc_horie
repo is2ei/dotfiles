@@ -117,6 +117,7 @@ alias bashrc="source ~/.bashrc"
 
 # memo
 alias devinfo="vi ~/.devinfo"
+alias prodinfo="vi ~/.prodinfo"
 
 # FOR PRODUCTION SERVER
 # PS1="\e[48;5;88m [\u@\H:\w] \n $ "

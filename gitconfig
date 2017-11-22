@@ -14,7 +14,7 @@
         ca  = commit -a
         ss  = status
         ps  = push
-        lg  = log
+        lg  = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
         lgo = log --oneline
         co  = checkout
         pl  = pull
