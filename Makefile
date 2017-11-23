@@ -1,4 +1,6 @@
-install: emacs git bash zsh tongue tmux
+none: 
+
+install: emacs git bash zsh tongue tmux screen
 
 emacs: emacs.el
 	cp emacs.el ~/.emacs.el
@@ -20,3 +22,6 @@ tongue: tonguerc
 
 tmux: tmux.conf
 	cp tmux.conf ~/.tmux.conf
+
+screen: screenrc
+	cp screenrc ~/.screenrc

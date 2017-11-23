@@ -1,0 +1,15 @@
+# GNU Screen - main configuration file
+# Author: Issei Horie - horie7188@gmail.com
+
+# Enable11⁄ 256 color term
+term xterm-256color
+
+# Cache 30000 lines for scroll back
+defscrollback 30000
+
+# bind escape key to Ctrl + T
+escape ^Tt
+
+hardstatus alwayslastline 
+# Very nice tabbed colored hardstatus line
+hardstatus string '%{= Kd} %{= Kd}%-w%{= Kr}[%{= KW}%n %t%{= Kr}]%{= Kd}%+w %-= %{KG} %H%{KW}|%{KY}%101`%{KW}|%D %M %d %Y%{= Kc} %C%A%{-}'

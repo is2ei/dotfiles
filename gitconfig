@@ -11,7 +11,7 @@
         cl  = clone
         aa  = add --all
         c   = commit
-        ca  = commit -a
+        ca  = commit --amend
         ss  = status
         ps  = push
         lg  = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
