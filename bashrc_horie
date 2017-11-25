@@ -19,15 +19,29 @@
 os=`uname`
 window_manager=`echo $DESKTOP_SESSION`
 
-#------------------------------
+#-------------------------------------------------------------------
 # Basic settings
-#------------------------------
+#-------------------------------------------------------------------
 umask 022
 unset LANG
 unset LANGUAGE
+PATH="$HOME/bin:$PATH"
+alias bashrc="source ~/.bashrc"
 alias rm='rm -i'
 alias cp='cp -i'
 alias mv='mv -i'
+alias path='echo -e ${PATH//:/\\n}'
+shopt -s autocd
+shopt -s no_empty_cmd_completion
+shopt -s checkwinsize
+
+#------------------------------------------------------------------
+# History options
+#------------------------------------------------------------------
+HISTCONTROL=ignoreboth
+shopt -s histappend
+HISTSIZE=100000
+HISTFILESIZE=2000000
 
 #------------------
 # Vim settings
@@ -42,12 +56,6 @@ if [ "$os" == "Darwin" ]; then
 else
   alias emacs="emacs -nw"
 fi
-
-# shopt
-shopt -s autocd
-shopt -s no_empty_cmd_completion
-shopt -s histappend
-shopt -s checkwinsize
 
 #-------------
 # ls aliases
@@ -73,9 +81,9 @@ export LESS_TERMCAP_so=$'\E[01;44;33m'
 export LESS_TERMCAP_ue=$'\E[0m'
 export LESS_TERMCAP_us=$'\E[01;32m'
 
-#------------------
+#-------------------------------------
 # extract archives
-#------------------
+#-------------------------------------
 extract () {
   if [ -f $1 ] ; then
     case $1 in
@@ -98,12 +106,27 @@ extract () {
   fi
 }
 
-# -----------
-# show PATH
-# -----------
-alias path='echo -e ${PATH//:/\\n}'
+#--------------------------------------------------------------------
+# Takes json on stdin and prints the value of a given path on stdout.
+#--------------------------------------------------------------------
+json_val() {
+  [[ -z "$1" ]] && printf "Usage: json_val <path>\n" && return 10
 
+  python -c 'import sys; import json; \
+    j = json.loads(sys.stdin.read()); \
+    print j'$1';'
+}
+
+#---------------------------------------------------------------
+# Returns the public/internet visible IP address of the system.
+#---------------------------------------------------------------
+whats_my_public_ip() {
+   curl --silent 'https://jsonip.com/' | json_val '["ip"]'
+}
+
+#--------------------------------------------------------
 # colored ls
+#--------------------------------------------------------
 if [ -x /usr/bin/dircolors ]; then
   test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
   alias ls='ls --color=auto'
@@ -136,6 +159,7 @@ BYellow='\e[1;35m'
 BCyan='\e[1;36m'
 BWhite='\e[1;37m'
 
+# Background
 On_Black='\e[40m'
 On_Red='\e[41m'
 On_Green='\e[42m'
@@ -150,13 +174,7 @@ NC="\e[m"
 # ----------------
 # prompt settings
 # ----------------
-if [ "$os" == "Darwin" ]; then
-  RESET="\[\017\]"
-  SMILEY=":)"
-  FROWNY=":("
-  SELECT="if [ \$? = 0 ]; then echo \"${SMILEY}\"; else echo \"${FROWNY}\"; fi"
-  PS1="${RESET}\u@\h:\w \`${SELECT}\` \n> "
-else    
+if [ "$TERM" == "xterm-256color" ]; then
   RESET="\[\017\]"
   NORMAL="\[\033[0m\]"
   RED="\[\033[38;2;255;160;160m\]"
@@ -168,10 +186,13 @@ else
   SELECT="if [ \$? = 0 ]; then echo \"${SMILEY}\"; else echo \"${FROWNY}\"; fi"
   # Throw it all together 
   PS1="${RESET}${GREEN}\u@\h:\w${NORMAL} \`${SELECT}\` \n${YELLOW}>${NORMAL} "
+else    
+  RESET="\[\017\]"
+  SMILEY=":)"
+  FROWNY=":("
+  SELECT="if [ \$? = 0 ]; then echo \"${SMILEY}\"; else echo \"${FROWNY}\"; fi"
+  PS1="${RESET}\u@\h:\w \`${SELECT}\` \n> "
 fi
-
-# load bashrc
-alias bashrc="source ~/.bashrc"
 
 # memo
 alias devinfo="vi ~/.devinfo"
@@ -183,4 +204,3 @@ alias prodinfo="vi ~/.prodinfo"
 # alias ll='ls -l'
 # alias l.='ls -d .*'
 
-PATH="$HOME/bin:$PATH"
