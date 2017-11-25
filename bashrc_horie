@@ -184,8 +184,17 @@ if [ "$TERM" == "xterm-256color" ]; then
   SMILEY="${WHITE}:)${NORMAL}"
   FROWNY="${RED}:(${NORMAL}"
   SELECT="if [ \$? = 0 ]; then echo \"${SMILEY}\"; else echo \"${FROWNY}\"; fi"
-  # Throw it all together 
-  PS1="${RESET}${GREEN}\u@\h:\w${NORMAL} \`${SELECT}\` \n${YELLOW}>${NORMAL} "
+
+  if [[ "$STY" != "" ]]; then
+    # screen
+    PS1="${RESET}${GREEN}\u@\h:\w${NORMAL} \`${SELECT}\` \n${YELLOW}>${NORMAL} "
+  elif [[ "SSH_CLIENT" != "" ]]; then
+    # SSH
+    PS1="${RESET}${GREEN}\u@\h:\w${NORMAL} \`${SELECT}\` \n${YELLOW}>${NORMAL} "
+  else
+    PS1="${RESET}${GREEN}\u@\h:\w${NORMAL} \`${SELECT}\` \n${YELLOW}>${NORMAL} "
+  fi
+
 else    
   RESET="\[\017\]"
   SMILEY=":)"

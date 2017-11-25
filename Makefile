@@ -1,4 +1,5 @@
-none: 
+help:
+	@echo "Usage: make [install | emacs | git | bash | zsh | tongue | tmux | screen]"
 
 install: emacs git bash zsh tongue tmux screen
 
@@ -9,7 +10,7 @@ git: gitconfig gitignore
 	cp gitconfig ~/.gitconfig && cp gitignore ~/.gitignore
 
 bash: bashrc_horie
-	cp bashrc_horie ~/.bashrc_horie
+	ln -s -f `pwd`/bashrc_horie ~/.bashrc_horie
 
 zsh: zshrc_horie
 	cp zshrc_horie ~/.zshrc_horie
@@ -24,4 +25,4 @@ tmux: tmux.conf
 	cp tmux.conf ~/.tmux.conf
 
 screen: screenrc
-	cp screenrc ~/.screenrc
+	ln -s -f `pwd`/screenrc ~/.screenrc
