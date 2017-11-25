@@ -1,11 +1,11 @@
-# .bashrc_horiec
+# .bashrc_horie
 # Author: Issei Horie <horie7188@gmail.com>
 # Source: https://github.com/ihorie/dotfiles
 
 # Preamble ----------------------------------------------------------
-# ________ 
-#< Thanks for visit! >
-# -------- 
+#  _____________________
+#  | Thanks for visit! |
+#  |___________________| 
 #        \   ^__^
 #         \  (oo)\_______
 #            (__)\       )\/\
@@ -13,22 +13,30 @@
 #                ||     ||
 #
 
+#------------
 # info
+#------------
 os=`uname`
 window_manager=`echo $DESKTOP_SESSION`
 
-# Basic settings ---------------------------------------------------
+#------------------------------
+# Basic settings
+#------------------------------
 umask 022
 unset LANG
 unset LANGUAGE
+alias rm='rm -i'
+alias cp='cp -i'
+alias mv='mv -i'
 
-alias vimrc="vim ~/.vimrc"
-
+#------------------
 # Vim settings
+#-----------------
 alias vi="vim"
 
+#-----------------
 # Emacs settings
-
+#-----------------
 if [ "$os" == "Darwin" ]; then
   :   
 else
@@ -41,14 +49,33 @@ shopt -s no_empty_cmd_completion
 shopt -s histappend
 shopt -s checkwinsize
 
+#-------------
 # ls aliases
+# ------------
+alias l='ls -CFlh'
 alias ll='ls -alh'
 alias la='ls -A'
-alias l='ls -CFlh'
-alias lsd="ls -alF | grep /$"
-alias lt='ls -altr'
+alias lk='ls -lSr'         # Sort by size, biggest last.
+alias lt='ls -ltr'         # Sort by date, most recent last
+alias lx='ls -lXB'         # Sort by extension.
+alias lc='ls -ltcr'        # Sort by/show change time, most recent last.
+alias lu='ls -ltur'        # Sort by/show access time, most recent last.
 
+#----------------------------
+# Tailoring 'less'
+#----------------------------
+# LESS man page colors
+export LESS_TERMCAP_mb=$'\E[01;31m'
+export LESS_TERMCAP_md=$'\E[01;31m'
+export LESS_TERMCAP_me=$'\E[0m'
+export LESS_TERMCAP_se=$'\E[0m'
+export LESS_TERMCAP_so=$'\E[01;44;33m'
+export LESS_TERMCAP_ue=$'\E[0m'
+export LESS_TERMCAP_us=$'\E[01;32m'
+
+#------------------
 # extract archives
+#------------------
 extract () {
   if [ -f $1 ] ; then
     case $1 in
@@ -71,13 +98,10 @@ extract () {
   fi
 }
 
+# -----------
 # show PATH
-path () {
-  IFS=':' read -ra PATHES  <<< $PATH
-  for i in "${PATHES[@]}"; do
-    echo $i
-  done
-}
+# -----------
+alias path='echo -e ${PATH//:/\\n}'
 
 # colored ls
 if [ -x /usr/bin/dircolors ]; then
@@ -91,7 +115,41 @@ else
   export LSCOLORS=gxFxCxDxcxegedabagaced
 fi
 
+# --------------------
+# Color definitions
+# --------------------
+# Normal Colors
+Black='\e[0;30m'
+Red='\e[0;31m'
+Green='\e[0;32m'
+Yellow='\e[0;32m'
+Blue='\e[0;34m'
+Purple='\e[0;35m'
+Cyan='\e[0;36m'
+White='\e[0;37m'
+
+# Bold
+BBlack='\e[1;30m'
+BRed='\e[1;31m'
+BGreen='\e[1;32m'
+BYellow='\e[1;35m'
+BCyan='\e[1;36m'
+BWhite='\e[1;37m'
+
+On_Black='\e[40m'
+On_Red='\e[41m'
+On_Green='\e[42m'
+On_Yellow='\e[43m'
+On_Blue='\e[44m'
+On_Purple='\e[45m'
+On_Cyan='\e[46m'
+On_White='\e[47m'
+
+NC="\e[m"
+
+# ----------------
 # prompt settings
+# ----------------
 if [ "$os" == "Darwin" ]; then
   RESET="\[\017\]"
   SMILEY=":)"
@@ -109,7 +167,7 @@ else
   FROWNY="${RED}:(${NORMAL}"
   SELECT="if [ \$? = 0 ]; then echo \"${SMILEY}\"; else echo \"${FROWNY}\"; fi"
   # Throw it all together 
-  PS1="${RESET}${GREEN}\u@\h:\w${NORMAL} \`${SELECT}\` ${YELLOW}\n>${NORMAL} "
+  PS1="${RESET}${GREEN}\u@\h:\w${NORMAL} \`${SELECT}\` \n${YELLOW}>${NORMAL} "
 fi
 
 # load bashrc
@@ -124,3 +182,5 @@ alias prodinfo="vi ~/.prodinfo"
 # alias ls='ls'
 # alias ll='ls -l'
 # alias l.='ls -d .*'
+
+PATH="$HOME/bin:$PATH"
