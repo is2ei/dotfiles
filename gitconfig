@@ -9,10 +9,10 @@
 
 [alias]
         cl  = clone
-        aa  = add --all
+        a  = add --all
         c   = commit
         ca  = commit --amend
-        ss  = status
+        s  = status
         ps  = push
 	psf = "!git push origin +`git symbolic-ref --short HEAD`" 
         lg  = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
