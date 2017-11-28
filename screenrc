@@ -49,5 +49,5 @@ bind ^c screen 1
 #-------------------------
 # include local screenrc
 #-------------------------
-source '/home/horie/.screenrc_local'
-
+source '/Users/horie/.screenrc_local'
+source '~/.screenrc_local'
