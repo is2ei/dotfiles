@@ -124,6 +124,13 @@ whats_my_public_ip() {
    curl --silent 'https://jsonip.com/' | json_val '["ip"]'
 }
 
+#---------------------------------------------------
+# Check if CPU has hardware virtualization support
+#---------------------------------------------------
+has_hardware_virtualization_support() {
+  egrep -c '(svm|vmx)' /proc/cpuinfo;
+}
+
 #--------------------------------------------------------
 # colored ls
 #--------------------------------------------------------
