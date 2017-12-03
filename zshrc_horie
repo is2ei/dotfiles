@@ -1,3 +1,16 @@
+#!/usr/bin/env zsh
+# .zshrc_horie
+# Author: Issei Horie <horie7188@gmail.com>
+# Source: https://github.com/ihorie/dotfiles
+
+# Preamble ------------------------------
+#
+#
+#
+#
+#
+#
+
 # Set up the prompt
 
 autoload -Uz promptinit
