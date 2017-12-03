@@ -1,3 +1,4 @@
+#!/usr/bin/env bash
 # .bashrc_horie
 # Author: Issei Horie <horie7188@gmail.com>
 # Source: https://github.com/ihorie/dotfiles
@@ -25,23 +26,24 @@ window_manager=`echo $DESKTOP_SESSION`
 umask 022
 unset LANG
 unset LANGUAGE
-PATH="$HOME/bin:$PATH"
 alias bashrc="source ~/.bashrc"
 alias rm='rm -i'
 alias cp='cp -i'
 alias mv='mv -i'
 alias path='echo -e ${PATH//:/\\n}'
+alias g='git'
 shopt -s autocd
 shopt -s no_empty_cmd_completion
 shopt -s checkwinsize
+PATH="$HOME/bin:$PATH"
 
 #------------------------------------------------------------------
 # History options
 #------------------------------------------------------------------
 HISTCONTROL=ignoreboth
-shopt -s histappend
 HISTSIZE=100000
 HISTFILESIZE=2000000
+shopt -s histappend
 
 #------------------
 # Vim settings
@@ -137,7 +139,7 @@ has_hardware_virtualization_support() {
 if [ -x /usr/bin/dircolors ]; then
   test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
   alias ls='ls --color=auto'
-  alias grep='grep --color=auto'
+  alias grep='grep -n --color=auto'
   alias fgrep='fgrep --color=auto'
   alias egrep='egrep --color=auto'
 else
@@ -225,10 +227,3 @@ fi
 # memo
 alias devinfo="vi ~/.devinfo"
 alias prodinfo="vi ~/.prodinfo"
-
-# FOR PRODUCTION SERVER
-# PS1="\e[48;5;88m [\u@\H:\w] \n $ "
-# alias ls='ls'
-# alias ll='ls -l'
-# alias l.='ls -d .*'
-
