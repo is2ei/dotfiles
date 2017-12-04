@@ -7,7 +7,7 @@ emacs: emacs.el
 	cp emacs.el ~/.emacs.el
 
 git: gitconfig gitignore
-	cp gitconfig ~/.gitconfig && cp gitignore ~/.gitignore
+	ln -s -f `pwd`/gitconfig ~/.gitconfig && ln -s -f `pwd`gitignore ~/.gitignore
 
 bash: bashrc_horie
 	ln -s -f `pwd`/bashrc_horie ~/.bashrc_horie

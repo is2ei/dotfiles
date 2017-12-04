@@ -4,7 +4,7 @@
 
 [core]
         editor = vim
-        excludesfile = ~/.gitignore
+        excludesfile = /Users/horie/.gitignore_global
         paget = less
 
 [alias]
@@ -14,7 +14,7 @@
         ca  = commit --amend
         s  = status
         ps  = push
-	psf = "!git push origin +`git symbolic-ref --short HEAD`" 
+        psf = "!git push origin +`git symbolic-ref --short HEAD`" 
         lg  = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
         lgo = log --oneline
         co  = checkout
@@ -23,4 +23,12 @@
         co  = checkout
         br  = branch
         create-backlog-issue-branch = "!git checkout -b `pbpaste | sed -E 's/([a-zA-Z]+-[0-9]+) (.*)/\\1\\/\\2/g' | sed -e 's/ /-/g' | sed -e 's/\\\"//g'`"
-        
+
+[include]
+        path = ~/.gitconfig_local
+[difftool "sourcetree"]
+        cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+        path = 
+[mergetool "sourcetree"]
+        cmd = /Applications/Sourcetree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+        trustExitCode = true
