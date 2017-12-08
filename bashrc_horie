@@ -226,5 +226,3 @@ else
 fi
 
 # memo
-alias devinfo="vi ~/.devinfo"
-alias prodinfo="vi ~/.prodinfo"
