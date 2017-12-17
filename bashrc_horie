@@ -55,7 +55,7 @@ alias vi="vim"
 # Emacs settings
 #-----------------
 if [ "$os" == "Darwin" ]; then
-  alias e="emacs":   
+  alias e="emacs"
 else
   alias e="emacs -nw"
 fi
@@ -233,6 +233,3 @@ else
 fi
 
 # memo
-alias devinfo="vi ~/.devinfo"
-alias prodinfo="vi ~/.prodinfo"
-
