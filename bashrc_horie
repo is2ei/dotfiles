@@ -134,6 +134,13 @@ has_hardware_virtualization_support() {
   egrep -c '(svm|vmx)' /proc/cpuinfo;
 }
 
+#--------------------------------------
+# Show specific line
+#--------------------------------------
+cat-line () {
+  head -n $3 $1 | tail -n `expr $3 - $2 + 1`
+}
+
 #--------------------------------------------------------
 # colored ls
 #--------------------------------------------------------
@@ -228,3 +235,4 @@ fi
 # memo
 alias devinfo="vi ~/.devinfo"
 alias prodinfo="vi ~/.prodinfo"
+
