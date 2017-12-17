@@ -25,3 +25,6 @@
 
 ; mouse support
 (xterm-mouse-mode t)
+
+;; Memo
+; M-x linum-mode

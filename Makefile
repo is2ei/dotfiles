@@ -4,7 +4,7 @@ help:
 install: emacs git bash zsh tongue tmux screen
 
 emacs: emacs.el
-	cp emacs.el ~/.emacs.el
+	ln -s -f `pwd`/emacs.el ~/.emacs.el
 
 git: gitconfig gitignore
 	cp gitconfig ~/.gitconfig && cp gitignore ~/.gitignore
