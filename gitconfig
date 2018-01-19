@@ -19,6 +19,8 @@
         lgo = log --oneline
         co  = checkout
         pl  = pull
+	f   = fetch
+	fp  = fetch --prune
         df  = diff
         co  = checkout
         cob = checkout -b
