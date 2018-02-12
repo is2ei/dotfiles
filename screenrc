@@ -50,4 +50,3 @@ bind ^c screen 1
 # include local screenrc
 #-------------------------
 source '/Users/horie/.screenrc_local'
-source '~/.screenrc_local'
