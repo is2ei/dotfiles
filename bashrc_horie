@@ -216,12 +216,12 @@ if [ "$TERM" == "xterm-256color" ]; then
 
     if [[ "$STY" != "" ]]; then
       # screen
-      PS1="${RESET}${GREEN}\u@\h:\w${NORMAL} \`${SELECT}\` \n${YELLOW}>${NORMAL} "
+      PS1="${RESET}${GREEN}\u@\h:\w${NORMAL} \`${SELECT}\` \n${YELLOW}\$${NORMAL} "
     elif [[ "SSH_CLIENT" != "" ]]; then
       # SSH
-      PS1="${RESET}${GREEN}\u@\h:\w${NORMAL} \`${SELECT}\` \n${YELLOW}>${NORMAL} "
+      PS1="${RESET}${GREEN}\u@\h:\w${NORMAL} \`${SELECT}\` \n${YELLOW}\$${NORMAL} "
     else
-      PS1="${RESET}${GREEN}\u@\h:\w${NORMAL} \`${SELECT}\` \n${YELLOW}>${NORMAL} "
+      PS1="${RESET}${GREEN}\u@\h:\w${NORMAL} \`${SELECT}\` \n${YELLOW}\$${NORMAL} "
     fi
   fi
 else    
