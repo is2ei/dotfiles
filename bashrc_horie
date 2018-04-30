@@ -202,7 +202,7 @@ if [ "$TERM" == "xterm-256color" ]; then
     SMILEY=":)"
     FROWNY="${RED}:(${NORMAL}"
     SELECT="if [ \$? = 0 ]; then echo \"${SMILEY}\"; else echo \"${FROWNY}\"; fi"
-    PS1="${RESET}${GREEN}\u@\:\w${NORMAL} \`${SELECT}\` \n${YELLOW}>${NORMAL} "
+    PS1="${RESET}${GREEN}\u@\:\w${NORMAL} \`${SELECT}\` \n\$${YELLOW}${NORMAL} "
   else
     RESET="\[\017\]"
     NORMAL="\[\033[0m\]"
@@ -229,7 +229,7 @@ else
   SMILEY=":)"
   FROWNY=":("
   SELECT="if [ \$? = 0 ]; then echo \"${SMILEY}\"; else echo \"${FROWNY}\"; fi"
-  PS1="${RESET}\u@\h:\w \`${SELECT}\` \n> "
+  PS1="${RESET}\u@\h:\w \`${SELECT}\` \n\$ "
 fi
 
 # memo
