@@ -1,4 +1,6 @@
 alias yashrc='. ~/.yash_profile'
 
 
+# One character aliases
 alias g='git'
+alias e='emacs -nw'
