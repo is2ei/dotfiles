@@ -1,0 +1,4 @@
+alias yashrc='. ~/.yash_profile'
+
+
+alias g='git'

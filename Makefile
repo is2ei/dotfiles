@@ -1,5 +1,5 @@
 help:
-	@echo "Usage: make [install | emacs | git | bash | zsh | tongue | tmux | screen]"
+	@echo "Usage: make [install | emacs | git | bash | zsh | yash | tongue | tmux | screen]"
 
 install: emacs git bash zsh tongue tmux screen
 
@@ -14,6 +14,9 @@ bash: bashrc_horie
 
 zsh: zshrc_horie
 	cp zshrc_horie ~/.zshrc_horie
+
+yash: yashrc_horie
+	ln -s -f `pwd`/yashrc_horie ~/.yashrc_horie
 
 tongue: tonguerc
 	cp tonguerc ~/.tonguerc
