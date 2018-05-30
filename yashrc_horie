@@ -1,6 +1,20 @@
+# .yashrc_horie
+# Author: Issei Horie <is2ei.horie@gmail.com>
+# Source: https://github.com/is2ei/dotfiles
+
+# Basic settings
 alias yashrc='. ~/.yash_profile'
 
+# Information
+: ${HOSTNAME:=$(uname -n)}
+
+# Prompt settings
+GREEN='\fg.'
+WHITE='\fw.'
+DEFAULT='\fD.'
+PS1=$GREEN'${LOGNAME}@${HOSTNAME%%.*}${DEFAULT}$ '
 
 # One character aliases
 alias g='git'
 alias e='emacs -nw'
+alias v='vim'
