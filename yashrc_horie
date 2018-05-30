@@ -3,7 +3,7 @@
 # Source: https://github.com/is2ei/dotfiles
 
 # Basic settings
-alias yashrc='. ~/.yash_profile'
+alias yashrc='. ~/.yash_profile && .~/.yashrc'
 
 # Information
 : ${HOSTNAME:=$(uname -n)}
