@@ -4,6 +4,7 @@
 
 # Basic settings
 alias yashrc='. ~/.yash_profile'
+unset LANG
 
 # Information
 : ${HOSTNAME:=$(uname -n)}
