@@ -19,3 +19,7 @@ alias g='git'
 alias e='emacs -nw'
 alias v='vim'
 alias c='clear'
+
+
+bindkey -v '\^L' clear-and-redraw-all # for vi mode
+bindkey -e '\^L' clear-and-redraw-all # for emacs mode
