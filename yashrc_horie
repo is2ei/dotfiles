@@ -23,11 +23,7 @@ alias g='git'
 alias e='emacs -nw'
 alias v='vim'
 alias c='clear'
-<<<<<<< HEAD
-
+alias l='ls --color=tty'
 
 bindkey -v '\^L' clear-and-redraw-all # for vi mode
 bindkey -e '\^L' clear-and-redraw-all # for emacs mode
-=======
-alias l='ls --color=tty'
->>>>>>> 5761156b01a2fd7a58b48c98acb0e452c36d6092
