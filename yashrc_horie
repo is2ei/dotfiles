@@ -15,8 +15,12 @@ WHITE='\fw.'
 DEFAULT='\fD.'
 PS1=$GREEN'${LOGNAME}@${HOSTNAME%%.*}:${PWD}\n${DEFAULT}$ '
 
+# Color
+alias gr="grep --color=auto "
+
 # One character aliases
 alias g='git'
 alias e='emacs -nw'
 alias v='vim'
 alias c='clear'
+alias l='ls --color=tty'
