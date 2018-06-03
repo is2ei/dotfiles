@@ -1,7 +1,7 @@
 help:
 	@echo "Usage: make [install | emacs | git | bash | zsh | yash | tongue | tmux | screen]"
 
-install: emacs git bash zsh tongue tmux screen
+install: emacs git bash zsh yash tongue tmux screen
 
 emacs: emacs.el
 	ln -s -f `pwd`/emacs.el ~/.emacs.el
@@ -13,19 +13,19 @@ bash: bashrc_horie
 	ln -s -f `pwd`/bashrc_horie ~/.bashrc_horie
 
 zsh: zshrc_horie
-	cp zshrc_horie ~/.zshrc_horie
+	ln -s -f `pwd`/zshrc_horie ~/.zshrc_horie
 
 yash: yashrc_horie
 	ln -s -f `pwd`/yashrc_horie ~/.yashrc_horie
 
 tongue: tonguerc
-	cp tonguerc ~/.tonguerc
+	ln -s -f `pwd`/tonguerc ~/.tonguerc
 
 #vim: vimrc
 #	cp vimrc ~/.vimrc
 
 tmux: tmux.conf
-	cp tmux.conf ~/.tmux.conf
+	ln -s -f `pwd`/tmux.conf ~/.tmux.conf
 
 screen: screenrc
 	ln -s -f `pwd`/screenrc ~/.screenrc
