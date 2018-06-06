@@ -19,11 +19,13 @@ PS1=$GREEN'${LOGNAME}@${HOSTNAME%%.*}:${PWD}\n${DEFAULT}$ '
 alias gr="grep --color=auto "
 
 # One character aliases
-alias g='git'
-alias e='emacs -nw'
-alias v='vim'
-alias c='clear'
-alias l='ls --color=tty'
+alias g='git '
+alias e='emacs -nw '
+alias v='vim '
+alias l='ls --color=tty '
+
+# Two character aliases
+alias ll='ls -l --color=tty '
 
 bindkey -v '\^L' clear-and-redraw-all # for vi mode
 bindkey -e '\^L' clear-and-redraw-all # for emacs mode
