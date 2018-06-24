@@ -61,13 +61,13 @@ set visualbell t_vb=
 " Line Return ----------------------------------------------------------------------------
 " Make sure Vim returns to the same line when you reopen a file.
 " Thanks to Steve Losh http://bitbucket.org/sjl/dotfiles/src/tip/vim/
-augroup line_return
-    au!
-    au BufReadPost *
-        \ if line("'\"") > 0 && line("'\"") <= line("$") |
-        \     execute 'normal! g`"zvzz' |
-        \ endif
-augroup END
+"augroup line_return
+"    au!
+"    au BufReadPost *
+"        \ if line("'\"") > 0 && line("'\"") <= line("$") |
+"        \     execute 'normal! g`"zvzz' |
+"        \ endif
+"augroup END
 
 " Backups ------------------------------------------------------------------------
 set undofile
@@ -81,25 +81,25 @@ set incsearch
 set hlsearch
 
 " dein Scripts --------------------------------------------------------------------------
-if &compatible
-   set nocompatible
-endif
-set runtimepath+=~/.vim/bundles/repos/github.com/Shougo/dein.vim
+"if &compatible
+"   set nocompatible
+"endif
+"set runtimepath+=~/.vim/bundles/repos/github.com/Shougo/dein.vim
 
-if dein#load_state('~/.vim/bundles/')
-  call dein#begin('~/.vim/bundles/')
-
-  call dein#add('~/.vim/bundles/repos/github.com/Shougo/dein.vim')
-  call dein#add('Shougo/neocomplete.vim')
+"if dein#load_state('~/.vim/bundles/')
+"  call dein#begin('~/.vim/bundles/')
+"
+"  call dein#add('~/.vim/bundles/repos/github.com/Shougo/dein.vim')
+"  call dein#add('Shougo/neocomplete.vim')
 
   " Add or remove your plugins here:
-  call dein#add('rust-lang/rust.vim')
+"  call dein#add('rust-lang/rust.vim')
 
-  call dein#end()
-  call dein#save_state()
-endif
+"  call dein#end()
+"  call dein#save_state()
+"endif
 
-filetype plugin indent on
+"filetype plugin indent on
 
 "End dein Scripts-------------------------
 
