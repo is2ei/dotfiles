@@ -28,3 +28,5 @@ mozilla-unified.kdev4
 .DS_Store
 Thumbs.db
 
+.idea/
+typetalk-plugin.iml
