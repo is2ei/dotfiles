@@ -33,7 +33,6 @@ alias mv='mv -i'
 alias path='echo -e ${PATH//:/\\n}'
 alias g='git'
 alias c='cargo'
-shopt -s autocd
 shopt -s no_empty_cmd_completion
 shopt -s checkwinsize
 PATH="$HOME/bin:$PATH"
@@ -202,7 +201,7 @@ if [ "$TERM" == "xterm-256color" ]; then
     SMILEY=":)"
     FROWNY="${RED}:(${NORMAL}"
     SELECT="if [ \$? = 0 ]; then echo \"${SMILEY}\"; else echo \"${FROWNY}\"; fi"
-    PS1="${RESET}${GREEN}\u@\:\w${NORMAL} \`${SELECT}\` \n\$${YELLOW}${NORMAL} "
+    PS1="${RESET}${GREEN}\u@\:\w${NORMAL} \`${SELECT}\` \n\$${NORMAL} "
   else
     RESET="\[\017\]"
     NORMAL="\[\033[0m\]"
@@ -233,5 +232,3 @@ else
 fi
 
 # memo
-
-# gifsicle -i anim.gif -O3 --colors 256 -o anim-opt.gif
