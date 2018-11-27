@@ -40,8 +40,12 @@ PATH="$HOME/bin:$PATH"
 #-------------------------------------------------------------------
 # Git aliases
 #-------------------------------------------------------------------
+alias gb="git branch"
 alias gs="git status --short --branch"
 alias gd="git diff"
+alias gcm="git commit -m"
+alias gca="git commit --amend"
+alias ga="git add"
 alias gl="git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit -n 10"
 alias push="git push"
 

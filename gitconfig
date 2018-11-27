@@ -9,10 +9,6 @@
 
 [alias]
         cl  = clone
-        a   = add --all
-        c   = commit
-        ca  = commit --amend
-        ps  = push
         psf = "!git push origin +`git symbolic-ref --short HEAD`" 
         co  = checkout
         pl  = pull
@@ -21,7 +17,6 @@
         df  = diff
         co  = checkout
         cob = checkout -b
-        br  = branch
         create-backlog-issue-branch = "!git checkout -b `pbpaste | sed -E 's/([a-zA-Z]+-[0-9]+) (.*)/\\1\\/\\2/g' | sed -e 's/ /-/g' | sed -e 's/\\\"//g'`"
 
 [include]
