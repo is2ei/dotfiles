@@ -31,7 +31,6 @@ alias rm='rm -i'
 alias cp='cp -i'
 alias mv='mv -i'
 alias path='echo -e ${PATH//:/\\n}'
-alias g='git'
 alias c='cargo'
 shopt -s no_empty_cmd_completion
 shopt -s checkwinsize
@@ -45,6 +44,7 @@ alias gs="git status --short --branch"
 alias gd="git diff"
 alias gcm="git commit -m"
 alias gca="git commit --amend"
+alias gco="git checkout"
 alias ga="git add"
 alias gl="git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit -n 10"
 alias push="git push"
