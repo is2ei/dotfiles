@@ -12,11 +12,8 @@
         a   = add --all
         c   = commit
         ca  = commit --amend
-        s   = status
         ps  = push
         psf = "!git push origin +`git symbolic-ref --short HEAD`" 
-        lg  = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit -n 10
-        lgo = log --oneline
         co  = checkout
         pl  = pull
 	f   = fetch
