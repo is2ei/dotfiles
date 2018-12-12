@@ -2,6 +2,7 @@
 
 # Inspired by the following the settings.
 # https://github.com/mathiasbynens/dotfiles/blob/master/.bash_prompt
+# https://github.com/necolas/dotfiles/blob/master/shell/bash_prompt
 
 if [[ $COLORTERM = gnome-* && $TERM = xterm ]] && infocmp gnome-256color >/dev/null 2>&1; then
 	export TERM='gnome-256color';
