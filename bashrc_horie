@@ -18,7 +18,7 @@
 # Includes
 #-------------------------------------------------------------------
 SCRIPT_PATH="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null && pwd )"
-source $SCRIPT_PATH/bash/bash_prompt
+source $SCRIPT_PATH/bash/prompt
 
 
 #------------
