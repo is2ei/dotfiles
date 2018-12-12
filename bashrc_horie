@@ -34,7 +34,12 @@ alias path='echo -e ${PATH//:/\\n}'
 alias c='cargo'
 shopt -s no_empty_cmd_completion
 shopt -s checkwinsize
-PATH="$HOME/bin:$PATH"
+
+# Add `~/bin` to the `$PATH`
+export PATH="$HOME/bin:$PATH";
+
+# Case-insensitive globbing (userd in pathname expansion)
+shopt -s nocaseglob;
 
 #-------------------------------------------------------------------
 # Git aliases
@@ -45,10 +50,11 @@ alias gd="git diff"
 alias gcm="git commit -m"
 alias gca="git commit --amend"
 alias gco="git checkout"
+alias gfp="git fetch --prune"
+alias gpl="git pull"
 alias ga="git add"
 alias gl="git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit -n 10"
 alias push="git push"
-
 
 #------------------------------------------------------------------
 # History options

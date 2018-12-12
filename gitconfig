@@ -6,18 +6,14 @@
         editor = vim
         excludesfile = /Users/horie/.gitignore_global
         paget = less
+        quotepath = false
 
 [alias]
         cl  = clone
-        psf = "!git push origin +`git symbolic-ref --short HEAD`" 
         co  = checkout
         pl  = pull
 	f   = fetch
 	fp  = fetch --prune
-        df  = diff
-        co  = checkout
-        cob = checkout -b
-        create-backlog-issue-branch = "!git checkout -b `pbpaste | sed -E 's/([a-zA-Z]+-[0-9]+) (.*)/\\1\\/\\2/g' | sed -e 's/ /-/g' | sed -e 's/\\\"//g'`"
 
 [include]
         path = ~/.gitconfig_local
