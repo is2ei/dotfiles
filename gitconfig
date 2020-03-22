@@ -1,25 +1,34 @@
-[user]
-        name  = Issei Horie
-        email = is2ei.horie@gmail.com
-
-[core]
-        editor = vim
-        excludesfile = /Users/horie/.gitignore_global
-        paget = less
-        quotepath = false
-
 [alias]
-        cl  = clone
-        co  = checkout
-        pl  = pull
-	f   = fetch
-	fp  = fetch --prune
 
-[include]
-        path = ~/.gitconfig_local
-[difftool "sourcetree"]
-	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
-	path = 
-[mergetool "sourcetree"]
-	cmd = /Applications/Sourcetree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
-	trustExitCode = true
+        # Remove branches that have already been merged with master
+        cleanup = "!git branch --merged | grep -v '\\*' | xargs -n 1 git branch -d"
+
+[color]
+
+        # Use colors in Git commands that are capable of colored output when
+        # outputting to the terminal. (This is the default setting in Git ≥ 1.8.4.)
+        ui = auto
+
+[color "branch"]
+
+        current = yellow reverse
+        local = yellow
+        remote = green
+
+[color "diff"]
+
+        meta = yellow bold
+        frag = magenta bold # line info
+        old = red # deletions
+        new = green # additions
+
+[color "status"]
+
+        added = yellow
+        changed = green
+        untracked = cyan
+
+[diff]
+
+        # Detect copies as well as renames
+        renames = copies
