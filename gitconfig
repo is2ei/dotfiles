@@ -1,7 +1,37 @@
 [alias]
 
+        # List aliases
+        aliases = config --get-regexp alias
+
+        branches = branch -a
+
         # Remove branches that have already been merged with master
         cleanup = "!git branch --merged | grep -v '\\*' | xargs -n 1 git branch -d"
+
+        # List contributors with number of commits
+        contributors = shortlog --summary --numbered
+
+        # Show the diff between the latest commit and the current state
+        d = !"git diff-index --quiet HEAD -- || clear; git --no-pager diff --patch-with-stat"
+
+        # Find branches containing commit
+        fb = "!f() { git branch -a --contains $1; }; f"
+
+        # Find commits by source code
+        fc = "!f() { git log --pretty=format:'%C(yellow)%h  %Cblue%ad  %Creset%s%Cgreen  [%cn] %Cred%d' --decorate --date=short -S$1; }; f"
+
+        # Find tags containing commit
+        ft = "!f() { git describe --always --contains $1; }; f"
+
+        # Find commits by commit message
+        fm = "!f() { git log --pretty=format:'%C(yellow)%h  %Cblue%ad  %Creset%s%Cgreen  [%cn] %Cred%d' --decorate --date=short --grep=$1; }; f"
+
+        remotes = remote -v
+
+        tags = tag -l
+
+        # Show the user email for the current repository.
+        whoami = config user.email
 
 [color]
 
